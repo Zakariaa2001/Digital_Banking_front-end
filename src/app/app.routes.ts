@@ -1,3 +1,4 @@
+import { CustomerAccountComponent } from './customer-account/customer-account.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { CustomersComponent } from './customers/customers.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -9,6 +10,7 @@ export const routes: Routes = [
     {path:"customers",component:CustomersComponent},
     {path:"accounts",component:AccountsComponent},
     {path:"new-customer",component:NewCustomerComponent},
+    {path:"customer-accounts/:id",component:CustomerAccountComponent},
     {path:"",redirectTo:"app",pathMatch:'full'},
     
 ];

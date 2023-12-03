@@ -9,6 +9,8 @@ import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { Customer } from './../model/Customer.model';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { routes } from '../app.routes';
 
 @Component({
   selector: 'app-customers',
@@ -23,7 +25,7 @@ export class CustomersComponent {
   errorMessage! : string;
   keyword! : string;
 
-  constructor(private customerService:CustomersService){
+  constructor(private customerService:CustomersService,private router:Router){
 
   }
   ngOnInit() {
@@ -61,5 +63,8 @@ export class CustomersComponent {
         console.log(err);
       }
     })
+  }
+  handleCustomerAccounts(customer:Customer) {
+    this.router.navigateByUrl('/customer-accounts/'+customer.id,{state : customer})
   }
 }
