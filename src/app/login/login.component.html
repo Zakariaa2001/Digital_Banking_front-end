@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card col-6 offset-3 mt-2">
+        <div class="card-header">Login</div>
+        <div class="card-body">
+            <!-- <div>{{ newFormCustomer | json}}</div> -->
+            <form [formGroup]="formLogin" (ngSubmit)="handleLogin()">
+                <div class="mb-3">
+                    <label for="" class="form-label">username :</label>
+                    <input type="text"  formControlName="username" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">password :</label>
+                    <input type="text"  formControlName="password" class="form-control">
+                </div>
+                <button [disabled]="" type="submit" class="btn btn-primary">save</button>
+            </form>
+        </div>
+    </div>
+</div>

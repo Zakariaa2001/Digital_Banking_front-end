@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import {ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AccountDetails } from '../model/account.model';
 import { throwError } from 'rxjs';
+import { AuthServiceService } from '../services/auth-service.service';
 
 @Component({
   selector: 'app-accounts',
@@ -24,7 +25,7 @@ export class AccountsComponent {
   operationFormGroup!:FormGroup;
   errorMessage!:string;
 
-  constructor(private fb:FormBuilder,private accountsService:AccountsService) {
+  constructor(private fb:FormBuilder,private accountsService:AccountsService,public authService:AuthServiceService) {
 
   }
 
